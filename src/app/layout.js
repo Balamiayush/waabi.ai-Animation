@@ -2,6 +2,8 @@ import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import TransitionWrapper from "@/components/pagetransition/TransitionWrapper";
+import LenisScroll from "./utils/Lenis";
+
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -19,10 +21,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${interTight.variable} antialiased`}
       >
+        <LenisScroll>
         <TransitionWrapper>
           <Nav />
           {children}
         </TransitionWrapper>
+        </LenisScroll>
       </body>
     </html>
   );
